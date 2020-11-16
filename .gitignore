@@ -1,0 +1,6 @@
+py_env
+node_modules
+.idea
+.vscode
+*.pyc
+__pycache__
