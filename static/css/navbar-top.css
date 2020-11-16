@@ -1,0 +1,33 @@
+body {
+  min-height: 75rem;
+}
+
+.search-field {
+	margin-right: 8.5rem;
+}
+
+.popular-tags-flex-container {
+	display: -webkit-flex; 
+	display: flex; 
+	flex-wrap: wrap;
+}
+
+.popular-tags-flex-item {
+	flex: auto;
+	flex-basis: auto;
+	justify-content: center;
+	align-items: center;
+	padding: 0rem 0.5rem 0rem 0.5rem; 
+}
+
+.text-u {
+	text-decoration: underline;
+}
+
+ul.pagination li a {
+	color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd; /* Gray */
+}

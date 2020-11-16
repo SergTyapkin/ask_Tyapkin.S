@@ -1,0 +1,45 @@
+{% extends 'inc/base.html' %}
+{% load static %}
+
+{% block content %}
+  <h3 class="pb-4 mb-4 border-bottom">
+    Settings: <span id="name">Dr. Pepper</span>
+  </h3>
+    <div class="row mb-3">
+     <div class="col-4">Login</div>
+      <div class="col-5">
+        <input type="text" class="form-control" placeholder="" >
+     </div>
+    </div>
+    <div class="row mb-3">
+     <div class="col-4">Email</div>
+      <div class="col-5">
+        <input type="text" class="form-control ">
+     </div>
+    </div>
+    <div class="row mb-3">
+     <div class="col-4">NickName</div>
+      <div class="col-5">
+        <input type="text" class="form-control ">
+     </div>
+    </div>
+
+    <div class="row mb-3">        
+     <div class="col-4">Upload avatar</div>
+       <div class="col-5">
+          <img src="http://placehold.it/128x128" class="p-2">
+          <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0">
+       </div>
+    </div>
+
+    <div class="row mb-3">
+     <div class="col-4"></div>
+      <div class="col-3">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
+     </div>
+    </div>
+{% endblock content %}
+        
+      
+      
+    

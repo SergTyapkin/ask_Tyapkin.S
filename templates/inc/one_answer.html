@@ -1,0 +1,22 @@
+{% load static %}
+
+<div class="media text-muted pt-3 border p-2 mb-2">
+  <ol class="list-unstyled mb-0" style="text-align: center">
+     <li><img src="http://placehold.it/64x64" class="p-2"></li>
+    <li>
+      <div class="def-number-input number-input safari_only">
+          <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-</button>
+          <input class="quantity" min="0" name="quantity" value="1" type="number" style="pointer-events: none; width: 35px; text-align: right;">
+          <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
+        </div>
+    </li>
+  </ol>
+  <div class="media-body pb-3 mb-0 small lh-125 ml-2">
+    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+        <div class="checkbox mt-2" style="font-size: 20px;">
+        <label>
+          <input type="checkbox"> Correct!
+        </label>
+      </div>      
+  </div>
+</div>

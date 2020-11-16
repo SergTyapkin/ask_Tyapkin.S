@@ -1,0 +1,32 @@
+{% extends 'inc/base.html' %}
+{% load static %}
+
+{% block content %}
+  <h3 class="pb-4 mb-4 border-bottom">
+    Log In
+  </h3>
+    <div class="row mb-3">
+      <div class="col-2">Login</div>
+      <div class="col-5">
+        <input type="text" class="form-control" placeholder="Enter your login here" >
+      </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-2">Password</div>
+        <div class="col-5">
+          <input type="password" class="form-control" placeholder="Enter your password">
+        </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-2"></div>
+      <div class="col-3">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login!</button>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-2"></div>
+        <div class="col-5">
+          <a class="nav-link" href="/signup">Register new account</a>
+        </div>
+    </div>
+{% endblock content %}

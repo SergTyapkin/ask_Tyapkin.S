@@ -1,0 +1,41 @@
+{% extends 'inc/base.html' %}
+{% load static %}
+
+{% block content %}
+
+  {% include 'inc/question.html' %}
+
+  {% for question in questions %}
+    {% include 'inc/one_answer.html' %}
+  {% endfor %}
+  <!---{% include 'inc/one_answer.html' %}--->
+  
+  <div class="pagination">
+        <ul class="pagination">
+        {% if answers.has_previous %}
+            <li><a href="?page=1">&laquo; first</a></li>
+            <li><a href="?page={{ answers.previous_page_number }}">previous</a></li>
+        {% endif %}
+
+        <!---<li>
+            <a>Page {{ answers.number }} of {{ answers.paginator.num_pages }}</a>
+        </li>--->
+
+        {% if answers.has_next %}
+            <li><a href="?page={{ answers.next_page_number }}">next</a></li>
+            <li><a href="?page={{ answers.paginator.num_pages }}">last &raquo;</a></li>
+        {% endif %}
+  </div>
+  <div class="row mb-3 mt-3 border-top">
+    <div class="col-12">
+      <div class="form-group mt-3">
+        <div class="col-10">
+          <textarea class="form-control" rows="8" id="textArea" placeholder="Enter your answer here"></textarea>
+        </div>
+      </div>
+      <div class="mt-3 ml-3">
+        <a href="#" class="btn btn-primary">Answer</a>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

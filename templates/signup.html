@@ -1,0 +1,64 @@
+{% extends 'inc/base.html' %}
+{% load static %}
+
+{% block content %}
+  <h3 class="pb-4 mb-4 border-bottom">
+    Registration
+  </h3>
+
+    <div class="row mb-3">
+     <div class="col-4">Login</div>
+      <div class="col-5">
+        <input type="text" class="form-control" placeholder="Login" >
+     </div>
+    </div>
+
+    <div class="row mb-3">
+     <div class="col-4">Email</div>
+      <div class="col-5">
+        <input type="text" class="form-control" placeholder="Example@gmail.com">
+     </div>
+    </div>
+
+    <div class="row mb-3">
+     <div class="col-4">Nickname</div>
+      <div class="col-5">
+        <input type="text" class="form-control" placeholder="Nickname">
+     </div>
+    </div>
+
+    <div class="row mb-3">
+     <div class="col-4">Password</div>
+      <div class="col-5">
+        <input type="password" class="form-control" placeholder="Password">
+     </div>
+    </div>
+
+    <div class="row mb-3">        
+     <div class="col-4">Repeat password</div>
+       <div class="col-5">
+          <input type="password" class="form-control" placeholder="Repeat password">
+       </div>
+    </div>
+
+    <div class="row mb-3">        
+     <div class="col-4">Upload avatar</div>
+       <div class="col-5">
+          <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0">
+       </div>
+    </div>
+
+    <div class="row mb-3">
+     <div class="col-4"></div>
+      <div class="col-3">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Register me!</button>
+     </div>
+    </div>
+
+{% endblock content %}
+
+      
+
+        
+      
+      

@@ -1,0 +1,36 @@
+{% extends 'inc/base.html' %}
+{% load static %}
+
+{% block content %}
+  <h3 class="pb-4 mb-4 border-bottom">
+    Hot questions
+    <a href="{% url 'home'%}" class="text-u" style="font-size: 17px; padding-left: 1rem;"> 
+      New questions
+    </a> 
+  </h3>
+    {% for question in questions %}
+      {% include 'inc/one_question.html' %}
+    {% endfor %}
+
+    <div class="pagination">
+        <ul class="pagination">
+        {% if questions.has_previous %}
+            <li><a href="?page=1">&laquo; first</a></li>
+            <li><a href="?page={{ questions.previous_page_number }}">previous</a></li>
+        {% endif %}
+
+        <li>
+            <a>Page {{ questions.number }} of {{ questions.paginator.num_pages }}</a>
+        </li>
+
+        {% if questions.has_next %}
+            <li><a href="?page={{ questions.next_page_number }}">next</a></li>
+            <li><a href="?page={{ questions.paginator.num_pages }}">last &raquo;</a></li>
+        {% endif %}
+  </div>
+
+
+
+
+  
+{% endblock content %}

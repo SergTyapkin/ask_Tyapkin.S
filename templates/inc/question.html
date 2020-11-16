@@ -1,0 +1,23 @@
+{% load static %}
+
+<div class="row mb-3 border-bottom">
+   <div class="col-md-3">
+    <ol class="list-unstyled mb-0" style="text-align: center">
+        <li><img src="http://placehold.it/128x128" class="p-2"></li>
+        <li><div class="def-number-input number-input safari_only">
+          <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-</button>
+          <input class="quantity" min="0" name="quantity" value="1" type="number" style="pointer-events: none; width: 50px; text-align: right;">
+          <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
+        </div></li>
+      </ol>
+    </div>
+    <div class="col-md-9">
+      <h4 class="pb-1 mb-1 ">{{ question.title }}</h4>
+      <span>{{ question.text }}</span>
+      <div class="row mb-3">
+        <span>Tags:</span> 
+        <a href="#" class="text-u">black-jack</a>
+        <a href="#" class="text-u">bender</a>
+     </div>       
+  </div>
+</div>
