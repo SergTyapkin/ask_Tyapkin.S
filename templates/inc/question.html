@@ -1,6 +1,6 @@
 {% load static %}
 
-<div class="row mb-3 border-bottom">
+<div class="row mb-3 p-2 border-bottom">
    <div class="col-md-3">
     <ol class="list-unstyled mb-0" style="text-align: center">
         <li><img src="http://placehold.it/128x128" class="p-2"></li>
@@ -11,13 +11,17 @@
         </div></li>
       </ol>
     </div>
+
     <div class="col-md-9">
-      <h4 class="pb-1 mb-1 ">{{ question.title }}</h4>
-      <span>{{ question.text }}</span>
-      <div class="row mb-3">
-        <span>Tags:</span> 
-        <a href="#" class="text-u">black-jack</a>
-        <a href="#" class="text-u">bender</a>
-     </div>       
+        <h4 class="pb-1 mb-1">{{ question.title }}</h4>
+        <span>{{ question.text }}</span>
+        <div class="row mb-3">
+          <div class="col-6">
+            <span>Tags</span>
+              {% for ntag in question.tags.split %}
+                 <a href="{% url 'tag' ntag %}" class="text-u">{{ ntag }}</a>
+              {% endfor %}
+          </div>
+        </div>
   </div>
 </div>

@@ -2,21 +2,14 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 
-# from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
-# from app.models import Article
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from blog.models import Question
+
 
 # Create your views here.
 def listing(request):
     return render(request, "listing.html", {})
 
-
-questions_dict = [
-    {
-        'id': idx,
-        'title': f'title{idx}',
-        'text': 'text text',
-    } for idx in range(10)
-]
 
 answers_dict = [
     {
@@ -40,41 +33,46 @@ def ask(request):
 
 
 def hot(request):
-    # paginator = Paginator(question_dict, 5)  # Show 5
-    # page = request.GET.get('page', 1)
-    # questions = paginator.get_page(page)
-    return render(request, 'hot.html', {'questions': questions_dict})
+    questions = Question.objects.all()
+    paginator = Paginator(questions, 4)
+    page = request.GET.get('page', 1)
+    questions = paginator.get_page(page)
+    return render(request, 'hot.html', {'questions': questions})
 
 
 def tag(request, tag):
+    questions = Question.objects.filter()
+    paginator = Paginator(questions, 4)
+    page = request.GET.get('page', 1)
+    questions = paginator.get_page(page)
     return render(request, 'tag.html', {'tag': tag})
 
 
 def listing(request):
-    # questions = Article.objects.all()
-    # aginator = Paginator(questions, 2)  # Show 2
-    # page = request.GET.get('page', 1)
-    # questions = paginator.get_page(page)
-    return render(request, 'index.html', {'questions': questions_dict})
+    questions = Question.objects.all()
+    paginator = Paginator(questions, 2)
+    page = request.GET.get('page', 1)
+    questions = paginator.get_page(page)
+    return render(request, 'index.html', {'questions': questions})
 
 
 def settings(request):
     return render(request, 'settings.html', {})
 
+
 def question(request):
-    # paginator = Paginator(answer_dict, 2)  # Show 5
-    # page = request.GET.get('page', 1)
-    # answers = paginator.get_page(page)
-    return render(request, 'question.html', {
-        'answers': answers_dict,
-    })
+    paginator = Paginator(answers_dict, 2)
+    page = request.GET.get('page', 1)
+    answers = paginator.get_page(page)
+    return render(request, 'question.html', {'answers': answers})
+
 
 def question(request, id):
-    # paginator = Paginator(answer_dict, 2)  # Show 5
-    # page = request.GET.get('page', 1)
-    # answers = paginator.get_page(page)
-    _question = questions_dict[id]
+    question = Question.objects.get(id=id)
+    paginator = Paginator(answers_dict, 2)
+    page = request.GET.get('page', 1)
+    answers = paginator.get_page(page)
     return render(request, 'question.html', {
-        'question': _question,
-        'answers': answers_dict,
+        'question': question,
+        'answers': answers,
     })
